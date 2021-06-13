@@ -2,43 +2,49 @@ import {
 	createRouter,
 	createWebHistory
 } from 'vue-router'
-import Home from '../components/HelloWorld.vue'
+import Home from '../page/HelloWorld.vue'
 
 const routes = [
+	// {
+	// 	path: '/',
+	// 	name: 'Home',
+	// 	component: Home
+	// },
+
 	{
-		path: '/',
-		name: 'Home',
-		component: Home
+		path: '/RefAndReactive',
+		name: 'RefAndReactive',
+		component: () => import('../page/CompositionAPICommonly/RefAndReactive.vue')
 	},
 	{
-		path: '/CompositionAPICommonly',
-		name: '常用组合API',
-		component: () => import('../components/CompositionAPICommonly.vue')
+		path: '/ProxyAndReflect',
+		name: 'ProxyAndReflect',
+		component: () => import('../page/CompositionAPICommonly/ProxyAndReflect.vue')
 	},
 	{
-		path: '/CompositionAPIOther',
-		name: '组合API其他部分',
-		component: () => import('../components/CompositionAPIOther.vue')
+		path: '/ComputAndwatch',
+		name: 'ComputAndwatch',
+		component: () => import('../page/CompositionAPICommonly/ComputAndwatch.vue')
 	},
 	{
 		path: '/Child',
 		name: 'Child',
-		component: () => import('../components/Child.vue')
+		component: () => import('../page/CompositionAPICommonly/Child.vue')
 	},
 	{
 		path: '/LifeCycle',
 		name: 'LifeCycle',
-		component: () => import('../components/LifeCycle.vue')
+		component: () => import('../page/CompositionAPICommonly/LifeCycle.vue')
 	},
 	{
 		path: '/UseHook',
 		name: 'UseHook',
-		component: () => import('../components/UseHook.vue')
+		component: () => import('../page/CompositionAPICommonly/UseHook.vue')
 	},
 	{
 		path: '/toRefsAndRef',
 		name: 'toRefsAndRef',
-		component: () => import('../components/toRefsAndRef.vue')
+		component: () => import('../page/CompositionAPICommonly/toRefsAndRef.vue')
 	},
 ]
 

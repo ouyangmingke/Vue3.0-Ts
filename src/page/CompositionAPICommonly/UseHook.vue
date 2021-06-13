@@ -23,8 +23,8 @@
 </template>
 <script lang='ts'>
 import { defineComponent, reactive, ref, toRefs, watch } from "vue";
-import UseMousePostion from "../hooks/UseMousePostion";
-import UseRequest from "../hooks/UseRequest";
+import UseMousePostion from "../../hooks/UseMousePostion";
+import UseRequest from "../../hooks/UseRequest";
 
 // 地址数据接口
 interface AddressResult {

@@ -1,14 +1,21 @@
 <template>
-  <h2>shallowReactive</h2>
-  <h3>m1: {{ m1 }}</h3>
-  <h3>m2: {{ m2 }}</h3>
-  <h3>m3: {{ m3 }}</h3>
-  <h3>m4: {{ m4 }}</h3>
+  <h2>
+    注意: 在修改 shallow 数据时 只能修改 shallow 类型数据
+    不能同时修改其他响应式数据
+  </h2>
+  <h3>shallowReactive 只处理了对象内最外层属性的响应式</h3>
+  <h3>shallowRef: 只处理了value的响应式, 不进行对象的reactive处理</h3>
+  <h5>m1: {{ m1 }}</h5>
+  <h5>m2: {{ m2 }}</h5>
+  <h5>m3: {{ m3 }}</h5>
+  <h5>m4: {{ m4 }}</h5>
   <button @click="update">更新</button>
 </template>
 <script lang='ts'>
 import {
   defineComponent,
+  isProxy,
+  isReactive,
   reactive,
   ref,
   shallowReactive,
@@ -31,19 +38,36 @@ export default defineComponent({
   name: "CompositionAPIOther",
   setup() {
     // 深度响应式
-    const m1 = reactive({ a: "reactive", b: { c: 2 } });
+    const m1 = reactive({
+      name: "reactive:对象深层响应",
+      car: { name: "奔驰" },
+    });
+
+    const m2 = ref({
+      name: "ref:基本类型响应",
+      car: { name: "奔驰M2" },
+    });
+
     // 浅响应式
-    const m2 = shallowReactive({ a: "shallowReactive", b: { c: 2 } });
-    const m3 = ref({ a: "ref", b: { c: 2 } });
-    const m4 = shallowRef({ a: "shallowRef", b: { c: 2 } });
+    const m3 = shallowReactive({
+      name: "shallowReactive",
+      car: { name: "奔驰M3" },
+    });
+
+    const m4 = shallowRef({
+      name: "shallowRef:基本类型浅响应",
+      car: { name: "奔驰M4" },
+    });
 
     const update = () => {
-      console.log(m1,"-",m2,"-",m3,"-",m4);
-      
-      m1.b.c += 1;
-      m2.b.c += 1;
-      m3.value.a += 1;
-      m4.value.a += 1;
+      // console.log(m1,"-",m2,"-",m3,"-",m4);
+      // m1.name += "++";
+      // m1.car.name += "==";
+      // m3.name += "++";
+
+      m3.car.name += "==";
+      // m2.value.car.name += "123";
+      // m4.value.name += "122";
     };
 
     return {

@@ -1,17 +1,19 @@
 <template>
-  vue2中的html模板必须是一对标签 vue3 可以用  '/>'
+  vue2中的html模板必须是一对标签 vue3 可以用 '/>'
   <!-- 使用子组件 HelloWorld -->
   <!-- <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" /> -->
   <hr />
   <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/CompositionAPICommonly">常用组合API</router-link> |
+    <!-- <router-link to="/">Home</router-link> | -->
+    <!-- <router-link to="/CompositionAPICommonly">常用组合API</router-link> |
+
+    <hr />
     <router-link to="/CompositionAPIOther">组合API其他部分</router-link>|
-    <router-link to="/Child">子组件</router-link>|
-    <router-link to="/LifeCycle">生命周期</router-link>|
-    <router-link to="/UseHook">Hook 函数</router-link>|
-    <router-link to="/toRefsAndRef">取出响应式数据</router-link>|
-    <router-view></router-view>
+    <hr />
+
+    <router-view></router-view> -->
+
+    <CompositionAPICommonly />
   </div>
 </template>
 
@@ -21,7 +23,7 @@
 import { defineComponent, ref } from "vue";
 // 引入一个子级组件
 // import UseHook from "./components/UseHook.vue";
-// import ToRefsAndRef from "./components/.vue";
+import CompositionAPICommonly from "./components/CompositionAPICommonly.vue";
 // 暴露一个定义好的组件
 export default defineComponent({
   // 当前组件的名字  命名后  可以使用 VUE 浏览器扩展查看到
@@ -40,6 +42,7 @@ export default defineComponent({
   // 注册组件
   components: {
     // 注册一个子组件
+    CompositionAPICommonly,
   },
 });
 </script>
