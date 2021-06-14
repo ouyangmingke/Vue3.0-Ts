@@ -14,6 +14,11 @@
     <router-view></router-view> -->
 
     <CompositionAPICommonly />
+    <hr>
+    <CompositionAPIOther />
+
+  <router-view></router-view>
+
   </div>
 </template>
 
@@ -24,6 +29,8 @@ import { defineComponent, ref } from "vue";
 // 引入一个子级组件
 // import UseHook from "./components/UseHook.vue";
 import CompositionAPICommonly from "./components/CompositionAPICommonly.vue";
+import CompositionAPIOther from "./components/CompositionAPIOther.vue";
+
 // 暴露一个定义好的组件
 export default defineComponent({
   // 当前组件的名字  命名后  可以使用 VUE 浏览器扩展查看到
@@ -43,6 +50,7 @@ export default defineComponent({
   components: {
     // 注册一个子组件
     CompositionAPICommonly,
+    CompositionAPIOther,
   },
 });
 </script>

@@ -46,6 +46,44 @@ const routes = [
 		name: 'toRefsAndRef',
 		component: () => import('../page/CompositionAPICommonly/toRefsAndRef.vue')
 	},
+
+
+
+	{
+		path: '/shallowReactiveAndshallowRef',
+		name: 'shallowReactiveAndshallowRef',
+		component: () => import('../page/CompositionAPIOther/shallowReactiveAndshallowRef.vue')
+	},
+	{
+		path: '/readonlyAndshallowReadonly',
+		name: 'readonlyAndshallowReadonly',
+		component: () => import('../page/CompositionAPIOther/readonlyAndshallowReadonly.vue')
+	},
+	{
+		path: '/toRawAndMarkRaw',
+		name: 'toRawAndMarkRaw',
+		component: () => import('../page/CompositionAPIOther/toRawAndMarkRaw.vue')
+	},
+	{
+		path: '/toRef',
+		name: 'toRef',
+		component: () => import('../page/CompositionAPIOther/toRef.vue')
+	},
+	{
+		path: '/customRef',
+		name: 'customRef',
+		component: () => import('../page/CompositionAPIOther/customRef.vue')
+	},
+	{
+		path: '/ProvideAndInject',
+		name: 'ProvideAndInject',
+		component: () => import('../page/CompositionAPIOther/ProvideAndInject.vue')
+	},
+	{
+		path: '/Check',
+		name: 'Check',
+		component: () => import('../page/CompositionAPIOther/Check.vue')
+	},
 ]
 
 const router = createRouter({

@@ -1,82 +1,19 @@
 <template>
-  <h2>
-    注意: 在修改 shallow 数据时 只能修改 shallow 类型数据
-    不能同时修改其他响应式数据
-  </h2>
-  <h3>shallowReactive 只处理了对象内最外层属性的响应式</h3>
-  <h3>shallowRef: 只处理了value的响应式, 不进行对象的reactive处理</h3>
-  <h5>m1: {{ m1 }}</h5>
-  <h5>m2: {{ m2 }}</h5>
-  <h5>m3: {{ m3 }}</h5>
-  <h5>m4: {{ m4 }}</h5>
-  <button @click="update">更新</button>
+  <router-link to="/shallowReactiveAndshallowRef"> 浅响应式</router-link>|
+  <router-link to="/readonlyAndshallowReadonly"> 深浅只读 </router-link>|
+  <router-link to="/toRawAndMarkRaw"> 转换为普通对象，禁用代理 </router-link>|
+  <router-link to="/toRef"> toRef </router-link>|
+  <router-link to="/customRef"> 自定义的 ref </router-link>|
+  <router-link to="/ProvideAndInject"> 依赖注入 </router-link>|
+  <router-link to="/Check"> 检查数据 </router-link>|
 </template>
 <script lang='ts'>
-import {
-  defineComponent,
-  isProxy,
-  isReactive,
-  reactive,
-  ref,
-  shallowReactive,
-  shallowRef,
-} from "vue";
-
-/* 
-shallowReactive与shallowRef
-  shallowReactive: 只处理了对象内最外层属性的响应式(也就是浅响应式)
-  shallowRef: 只处理了value的响应式, 不进行对象的reactive处理
-总结:
-  reactive与ref实现的是深度响应式, 而shallowReactive与shallowRef是浅响应式
-  什么时候用浅响应式呢?
-    一般情况下使用ref和reactive即可,
-    如果有一个对象数据, 结构比较深, 但变化时只是外层属性变化 ===> shallowReactive
-    如果有一个对象数据, 后面会产生新的对象来替换 ===> shallowRef
-*/
+import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "CompositionAPIOther",
   setup() {
-    // 深度响应式
-    const m1 = reactive({
-      name: "reactive:对象深层响应",
-      car: { name: "奔驰" },
-    });
-
-    const m2 = ref({
-      name: "ref:基本类型响应",
-      car: { name: "奔驰M2" },
-    });
-
-    // 浅响应式
-    const m3 = shallowReactive({
-      name: "shallowReactive",
-      car: { name: "奔驰M3" },
-    });
-
-    const m4 = shallowRef({
-      name: "shallowRef:基本类型浅响应",
-      car: { name: "奔驰M4" },
-    });
-
-    const update = () => {
-      // console.log(m1,"-",m2,"-",m3,"-",m4);
-      // m1.name += "++";
-      // m1.car.name += "==";
-      // m3.name += "++";
-
-      m3.car.name += "==";
-      // m2.value.car.name += "123";
-      // m4.value.name += "122";
-    };
-
-    return {
-      m1,
-      m2,
-      m3,
-      m4,
-      update,
-    };
+    return {};
   },
 });
 </script>

@@ -7,9 +7,6 @@
     <router-link to="/LifeCycle">生命周期</router-link>|
     <router-link to="/UseHook">Hook 函数</router-link>|
     <router-link to="/toRefsAndRef">取出响应式数据</router-link>|
-    <router-view></router-view>
-
- 
   </div>
 </template>
 
