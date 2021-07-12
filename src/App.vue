@@ -12,13 +12,23 @@
     <hr />
 
     <router-view></router-view> -->
-
-    <CompositionAPICommonly />
-    <hr>
-    <CompositionAPIOther />
-
-  <router-view></router-view>
-
+    <fieldset>
+      <legend>组合API常用部分</legend>
+      <CompositionAPICommonly />
+    </fieldset>
+    <hr />
+    <fieldset>
+      <legend>组合API其他部分</legend>
+      <CompositionAPIOther />
+    </fieldset>
+    <fieldset>
+      <legend>DIYAPI</legend>
+      <DIYAPI />
+    </fieldset>
+    <fieldset>
+      <legend>详细内容</legend>
+      <router-view></router-view>
+    </fieldset>
   </div>
 </template>
 
@@ -30,6 +40,7 @@ import { defineComponent, ref } from "vue";
 // import UseHook from "./components/UseHook.vue";
 import CompositionAPICommonly from "./components/CompositionAPICommonly.vue";
 import CompositionAPIOther from "./components/CompositionAPIOther.vue";
+import DIYAPI from "./components/DIYAPI.vue";
 
 // 暴露一个定义好的组件
 export default defineComponent({
@@ -51,6 +62,7 @@ export default defineComponent({
     // 注册一个子组件
     CompositionAPICommonly,
     CompositionAPIOther,
+    DIYAPI,
   },
 });
 </script>

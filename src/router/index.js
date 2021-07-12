@@ -2,7 +2,7 @@ import {
 	createRouter,
 	createWebHistory
 } from 'vue-router'
-import Home from '../page/HelloWorld.vue'
+// import Home from '../page/HelloWorld.vue'
 
 const routes = [
 	// {
@@ -83,6 +83,26 @@ const routes = [
 		path: '/Check',
 		name: 'Check',
 		component: () => import('../page/CompositionAPIOther/Check.vue')
+	},
+	{
+		path: '/DIYshallowReactiveAndReacitve',
+		name: 'DIYshallowReactiveAndReacitve',
+		component: () => import('../page/DIYAPI/DIYshallowReactiveAndReacitve.vue')
+	},
+	{
+		path: '/DIYshallowReadonlyAndreadonly',
+		name: 'DIYshallowReadonlyAndreadonly',
+		component: () => import('../page/DIYAPI/DIYshallowReadonlyAndreadonly.vue')
+	},
+	{
+		path: '/DIYshallowRefAndref',
+		name: 'DIYshallowRefAndref',
+		component: () => import('../page/DIYAPI/DIYshallowRefAndref.vue')
+	},
+	{
+		path: '/DIYCheck',
+		name: 'DIYCheck',
+		component: () => import('../page/DIYAPI/DIYCheck.vue')
 	},
 ]
 
