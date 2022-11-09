@@ -26,6 +26,10 @@
       <DIYAPI />
     </fieldset>
     <fieldset>
+      <legend>CreateVnodes</legend>
+      <CreateVnodes />
+    </fieldset>
+    <fieldset>
       <legend>详细内容</legend>
       <router-view></router-view>
     </fieldset>
@@ -41,6 +45,7 @@ import { defineComponent, ref } from "vue";
 import CompositionAPICommonly from "./components/CompositionAPICommonly.vue";
 import CompositionAPIOther from "./components/CompositionAPIOther.vue";
 import DIYAPI from "./components/DIYAPI.vue";
+import CreateVnodes from "./page/CreateVnodes.vue";
 
 // 暴露一个定义好的组件
 export default defineComponent({
@@ -63,6 +68,7 @@ export default defineComponent({
     CompositionAPICommonly,
     CompositionAPIOther,
     DIYAPI,
+    CreateVnodes
   },
 });
 </script>

@@ -3,11 +3,23 @@
   <h1>子组件</h1>
   <h1>{{ msg }}</h1>
   <button @click="cw">更新</button>
+  <Son>
+    <template #default>
+      <p>修改默认插槽</p>
+    </template>
+    <template v-slot:header>
+      <p>修改header插槽</p>
+    </template>
+  </Son>
 </template>
 <script lang='ts'>
 import { defineComponent } from "vue";
+import Son from '../../components/Son.vue';
 export default defineComponent({
   name: "Child",
+  components: {
+    Son,
+  },
   props: {
     msg: String,
   },
@@ -64,4 +76,5 @@ export default defineComponent({
 });
 </script>
 <style>
+
 </style>
